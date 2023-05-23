@@ -28,9 +28,27 @@ namespace WpfApp1
 
 		private void BrowseContactsButton_Click(object sender, RoutedEventArgs e)
 		{
-			//ContactsWindow contactsWindow = new ContactsWindow(contacts);
-			//contactsWindow.ShowDialog();
+			Window1 window1 = new Window1();
+			window1.Show();
+			this.Close();
 		}
+
+		
+
+
+		private void FirstNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			var textBox = (TextBox)sender;
+			if (string.IsNullOrWhiteSpace(textBox.Text))
+			{
+				textBox.Tag = "placeholder";
+			}
+			else
+			{
+				textBox.Tag = null;
+			}
+		}
+
 	}
 
 	public class Contact

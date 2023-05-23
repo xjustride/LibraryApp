@@ -14,3 +14,5 @@ C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateRes
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\Window1.g.cs
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\Window1.baml

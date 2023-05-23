@@ -10,6 +10,17 @@
         <ImageBrush ImageSource="C:\Users\remo2\source\repos\WpfApp1\WpfApp1\Resources\background2.png" Stretch="Fill" />
     </Window.Background>
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Tag" Value="" />
+                <Style.Triggers>
+                    <Trigger Property="Tag" Value="placeholder">
+                        <Setter Property="Foreground" Value="Gray" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -18,18 +29,18 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Imię" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" />
-        <TextBox Grid.Row="0" x:Name="FirstNameTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,35,0,0" />
+        <TextBox Grid.Row="2" x:Name="FirstNameTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,22,0,0" Grid.RowSpan="3" />
 
-        <TextBlock Grid.Row="1" Text="Nazwisko" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" />
-        <TextBox Grid.Row="1" x:Name="LastNameTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0" />
+        <TextBox Grid.Row="4" x:Name="LastNameTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,67,0,0" />
 
-        <TextBlock Grid.Row="2" Text="Numer Telefonu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,130,0,0" />
-        <TextBox Grid.Row="2" x:Name="PhoneNumberTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,155,0,0" />
+        <TextBox Grid.Row="4" x:Name="PhoneNumberTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,110,0,0" />
 
-        <Button Content="Dodaj kontakt" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,45,138,0" Click="AddContactButton_Click" Grid.RowSpan="2" />
+        <TextBox Grid.Row="4" x:Name="EmailTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,157,0,0" />
 
-        <Button Grid.Row="1" Content="Przeglądaj kontakty" Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="537,33,0,0" Click="BrowseContactsButton_Click" />
+
+        <Button Content="Dodaj kontakt" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,250,0" Click="AddContactButton_Click" />
+
+        <Button Content="Przeglądaj kontakty" Width="144" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="570,15,0,0" Click="BrowseContactsButton_Click" />
 
     </Grid>
 </Window>
