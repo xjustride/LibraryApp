@@ -7,73 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\remo2\source\repos\WpfApp1\WpfApp1\Resources\background.jpg" Stretch="Fill" />
+        <ImageBrush ImageSource="C:\Users\remo2\source\repos\WpfApp1\WpfApp1\Resources\background2.png" Stretch="Fill" />
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Button Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,58,93,0" Click="AddContactButton_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Ellipse x:Name="ButtonBackground" Fill="Green" />
-                        <TextBlock Text="+" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="White" />
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ButtonBackground" Property="Stroke" Value="White" />
-                            <Setter TargetName="ButtonBackground" Property="StrokeThickness" Value="2" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+        <TextBlock Grid.Row="0" Text="Imię" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" />
+        <TextBox Grid.Row="0" x:Name="FirstNameTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,35,0,0" />
 
-        <Button Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,105,93,0" RenderTransformOrigin="-1.567,1.901" Click="EditContactButton_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Ellipse x:Name="ButtonBackground" Fill="Red" />
-                        <TextBlock Text="-" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="White" />
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ButtonBackground" Property="Stroke" Value="White" />
-                            <Setter TargetName="ButtonBackground" Property="StrokeThickness" Value="2" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+        <TextBlock Grid.Row="1" Text="Nazwisko" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" />
+        <TextBox Grid.Row="1" x:Name="LastNameTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0" />
 
-        <Button Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,152,93,0" RenderTransformOrigin="-1.567,1.901" Click="DeleteContactButton_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Ellipse x:Name="ButtonBackground" Fill="Blue" />
-                        <TextBlock Text="x" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="White" />
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ButtonBackground" Property="Stroke" Value="White" />
-                            <Setter TargetName="ButtonBackground" Property="StrokeThickness" Value="2" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+        <TextBlock Grid.Row="2" Text="Numer Telefonu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,130,0,0" />
+        <TextBox Grid.Row="2" x:Name="PhoneNumberTextBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,155,0,0" />
 
-        <DataGrid x:Name="ContactsGrid" AutoGenerateColumns="False" Margin="42,40,-22,116" CanUserAddRows="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Imię" Binding="{Binding FirstName}" />
-                <DataGridTextColumn Header="Nazwisko" Binding="{Binding LastName}" />
-                <DataGridTextColumn Header="Numer Telefonu" Binding="{Binding PhoneNumber}" />
-                <DataGridTextColumn Header="Adres Email" Binding="{Binding Email}" />
-            </DataGrid.Columns>
-        </DataGrid>
+        <Button Content="Dodaj kontakt" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,45,138,0" Click="AddContactButton_Click" Grid.RowSpan="2" />
+
+        <Button Grid.Row="1" Content="Przeglądaj kontakty" Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="537,33,0,0" Click="BrowseContactsButton_Click" />
+
     </Grid>
 </Window>

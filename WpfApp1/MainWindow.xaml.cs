@@ -12,37 +12,24 @@ namespace WpfApp1
 		{
 			InitializeComponent();
 			contacts = new List<Contact>();
-			InitializeContacts();
-			ContactsGrid.ItemsSource = contacts;
-		}
-
-		private void InitializeContacts()
-		{
-			// Przykładowe dane kontaktów
-			contacts.Add(new Contact { FirstName = "Jan", LastName = "Kowalski", PhoneNumber = "123456789", Email = "jan.kowalski@example.com" });
-			contacts.Add(new Contact { FirstName = "Anna", LastName = "Nowak", PhoneNumber = "987654321", Email = "anna.nowak@example.com" });
-			// Dodaj więcej kontaktów lub pobierz z bazy danych
 		}
 
 		private void AddContactButton_Click(object sender, RoutedEventArgs e)
 		{
-			// Logika dodawania nowego kontaktu
-			// Możesz otworzyć nowe okno dialogowe lub formularz do wprowadzania danych
-			// Po dodaniu kontaktu, zaktualizuj listę kontaktów i odśwież widok DataGrid
+			//string firstName = FirstNameTextBox.Text;
+			//string lastName = LastNameTextBox.Text;
+			//string phoneNumber = PhoneNumberTextBox.Text;
+
+			//Contact newContact = new Contact(firstName, lastName, phoneNumber);
+			//contacts.Add(newContact);
+			//ContactsGrid.ItemsSource = null;
+			//ContactsGrid.ItemsSource = contacts;
 		}
 
-		private void EditContactButton_Click(object sender, RoutedEventArgs e)
+		private void BrowseContactsButton_Click(object sender, RoutedEventArgs e)
 		{
-			// Logika edycji istniejącego kontaktu
-			// Możesz otworzyć okno dialogowe lub formularz z wybranymi danymi kontaktu do edycji
-			// Po zapisaniu zmian, zaktualizuj listę kontaktów i odśwież widok DataGrid
-		}
-
-		private void DeleteContactButton_Click(object sender, RoutedEventArgs e)
-		{
-			// Logika usuwania kontaktu
-			// Pobierz zaznaczony kontakt z DataGrid i usuń go z listy kontaktów
-			// Po usunięciu, odśwież widok DataGrid
+			//ContactsWindow contactsWindow = new ContactsWindow(contacts);
+			//contactsWindow.ShowDialog();
 		}
 	}
 
@@ -52,5 +39,12 @@ namespace WpfApp1
 		public string LastName { get; set; }
 		public string PhoneNumber { get; set; }
 		public string Email { get; set; }
+
+		public Contact(string firstName, string lastName, string phoneNumber)
+		{
+			FirstName = firstName;
+			LastName = lastName;
+			PhoneNumber = phoneNumber;
+		}
 	}
 }
