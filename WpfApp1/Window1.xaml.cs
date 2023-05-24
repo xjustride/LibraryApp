@@ -63,7 +63,6 @@ namespace WpfApp1
 							}
 
 							// Wyświetl dane w kontrolce ListBox
-							ContactsListBox.ItemsSource = contacts;
 						}
 					}
 				}

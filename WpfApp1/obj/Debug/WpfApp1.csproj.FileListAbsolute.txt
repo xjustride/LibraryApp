@@ -25,3 +25,5 @@ C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.x
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\loginpage.g.cs
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\loginpage.baml

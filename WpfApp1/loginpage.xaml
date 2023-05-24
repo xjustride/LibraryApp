@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp1.loginpage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="loginpage" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FF9B90D1" Offset="0"/>
+                <GradientStop Color="#FFE5577A" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Romb z szarym tłem -->
+        <Polygon Points="400,100 700,225 400,350 100,225" Fill="Gray" />
+
+        <!-- Pole tekstowe dla loginu -->
+        <TextBox Width="200" Height="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Login" Margin="0,-100,0,0" Background="#FFEAE6F7" BorderBrush="#FF9B90D1" Foreground="Black"/>
+
+        <!-- Pole tekstowe dla hasła -->
+        <TextBox Width="200" Height="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Hasło" Margin="0,100,0,0" Background="#FFEAE6F7" BorderBrush="#FF9B90D1" Foreground="Black" />
+
+        <!-- Przycisk "Zaloguj" -->
+        <Button Content="Zaloguj" Width="120" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,200,0,0" Background="#FFE5577A" Foreground="White" BorderBrush="#FF9B90D1" />
+    </Grid>
+</Window>
