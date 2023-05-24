@@ -16,3 +16,12 @@ C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\Window1.g.cs
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\Window1.baml
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\MaterialDesignColors.dll
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\MaterialDesignColors.pdb
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete

@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <Button Click="MainMenu_Click">Wróć do menu głównego</Button>
+        <Button Click="MainMenu_Click" Margin="651,25,34,366">Wróć do menu głównego</Button>
+        
 
     </Grid>
 </Window>

@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+
 
 namespace WpfApp1
 {
@@ -13,17 +18,69 @@ namespace WpfApp1
 			InitializeComponent();
 			contacts = new List<Contact>();
 		}
+		private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+		{
+			var textBox = (TextBox)sender;
+			var text = textBox.Text + e.Text;
+			if (!System.Text.RegularExpressions.Regex.IsMatch(text, "^[a-zA-Z ]{1,50}$"))
+			{
+				e.Handled = true;
+			}
+		}
 
+
+		private void NumberTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+		{
+			var textBox = (TextBox)sender;
+			var text = textBox.Text + e.Text;
+			if (!System.Text.RegularExpressions.Regex.IsMatch(text, "^[0-9]{1,20}$"))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void EmailTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+		{
+			var textBox = (TextBox)sender;
+			var text = textBox.Text + e.Text;
+			if (text.Length > 30)
+			{
+				e.Handled = true;
+				return;
+			}
+		}
 		private void AddContactButton_Click(object sender, RoutedEventArgs e)
 		{
-			//string firstName = FirstNameTextBox.Text;
-			//string lastName = LastNameTextBox.Text;
-			//string phoneNumber = PhoneNumberTextBox.Text;
+			// Pobierz dane wprowadzone do TextBox'a
+			string imie = FirstNameTextBox.Text;
+			string numerTelefonu = PhoneNumberTextBox.Text;
+			string adresEmail = EmailTextBox.Text;
 
-			//Contact newContact = new Contact(firstName, lastName, phoneNumber);
-			//contacts.Add(newContact);
-			//ContactsGrid.ItemsSource = null;
-			//ContactsGrid.ItemsSource = contacts;
+			// Utwórz połączenie z bazą danych
+			string connectionString = "Server=MSI;Database=PhoneBook;Trusted_Connection=True;";
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				try
+				{
+					connection.Open();
+
+					// Dodaj dane do tabeli Osoby
+					string insertOsobyQuery = "INSERT INTO PhoneBook (imie, numer_telefonu, adres_email) VALUES (@Imie, @NumerTelefonu, @AdresEmail)";
+					using (SqlCommand command = new SqlCommand(insertOsobyQuery, connection))
+					{
+						command.Parameters.AddWithValue("@Imie", imie);
+						command.Parameters.AddWithValue("@NumerTelefonu", numerTelefonu);
+						command.Parameters.AddWithValue("@AdresEmail", adresEmail);
+						command.ExecuteNonQuery();
+					}
+
+					MessageBox.Show("Kontakt został dodany do bazy danych.");
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Wystąpił błąd podczas dodawania kontaktu: " + ex.Message);
+				}
+			}
 		}
 
 		private void BrowseContactsButton_Click(object sender, RoutedEventArgs e)
