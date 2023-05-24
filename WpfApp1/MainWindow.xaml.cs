@@ -131,7 +131,9 @@ namespace WpfApp1
 
 		private void CloseButton_Click(object sender, RoutedEventArgs e)
 		{
-			Application.Current.Shutdown();
+			loginpage lp = new loginpage();
+			lp.Show();
+			this.Close();
 		}
 	}
 

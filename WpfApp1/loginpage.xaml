@@ -6,6 +6,41 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="loginpage" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Background" Value="#FFEAE6F7"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="#FF9B90D1"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="18">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Background" Value="#FFEAE6F7"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="#FF9B90D1"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="18">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -14,16 +49,22 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <!-- Romb z szarym tłem -->
-        <Polygon Points="400,100 700,225 400,350 100,225" Fill="Gray" />
+        <!-- Nagłówek -->
+        <TextBlock Text="JustLift" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,55,0,0" Foreground="White"/>
+
+        <TextBlock Text="Panel Pracownika" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,23,0,0" Foreground="White" RenderTransformOrigin="1.019,0.608"/>
+
+        <TextBlock Text="Podaj ID" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,137,0,0" Foreground="White" RenderTransformOrigin="1.019,0.608"/>
+
+        <TextBlock Text="Podaj hasło" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,237,0,0" Foreground="White" RenderTransformOrigin="1.019,0.608"/>
 
         <!-- Pole tekstowe dla loginu -->
-        <TextBox Width="200" Height="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Login" Margin="0,-100,0,0" Background="#FFEAE6F7" BorderBrush="#FF9B90D1" Foreground="Black"/>
+        <TextBox Width="200" Height="45" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,172,0,0" />
 
         <!-- Pole tekstowe dla hasła -->
-        <TextBox Width="200" Height="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Hasło" Margin="0,100,0,0" Background="#FFEAE6F7" BorderBrush="#FF9B90D1" Foreground="Black" />
+        <PasswordBox Width="200" Height="45" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,273,0,0" />
 
         <!-- Przycisk "Zaloguj" -->
-        <Button Content="Zaloguj" Width="120" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,200,0,0" Background="#FFE5577A" Foreground="White" BorderBrush="#FF9B90D1" />
+        <Button Content="Zaloguj" Width="120" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,335,0,0" Background="#FFE5577A" Foreground="White" BorderBrush="#FF9B90D1" Click="Button_Click" />
     </Grid>
 </Window>
