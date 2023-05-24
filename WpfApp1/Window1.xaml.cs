@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,50 @@ namespace WpfApp1
 			MainWindow window = new MainWindow();
 			window.Show();
 			this.Close();
+		}
+		private void BrowseContactsButton_Click(object sender, RoutedEventArgs e)
+		{
+			Window1 window1 = new Window1();
+			window1.Show();
+			this.Close();
+			string connectionString = "Server=MSI;Database=PhoneBook;Trusted_Connection=True;";
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				try
+				{
+					connection.Open();
+
+					// Pobierz dane z tabeli PhoneBook
+					string selectQuery = "SELECT imie, numer_telefonu, adres_email FROM PhoneBook ORDER BY imie";
+					using (SqlCommand command = new SqlCommand(selectQuery, connection))
+					{
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							// Utwórz listę dla przechowywania danych kontaktowych
+							List<string> contacts = new List<string>();
+
+							// Odczytaj dane kontaktowe i dodaj je do listy
+							while (reader.Read())
+							{
+								string imie = reader.GetString(0);
+								string numerTelefonu = reader.GetString(1);
+								string adresEmail = reader.GetString(2);
+
+								string contactInfo = $"Imię: {imie}, Numer telefonu: {numerTelefonu}, Adres email: {adresEmail}";
+								contacts.Add(contactInfo);
+							}
+
+							// Wyświetl dane w kontrolce ListBox
+							ContactsListBox.ItemsSource = contacts;
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Wystąpił błąd podczas pobierania danych: " + ex.Message);
+				}
+			}
+
 		}
 	}
 }

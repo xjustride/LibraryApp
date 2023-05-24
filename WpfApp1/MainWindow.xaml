@@ -12,19 +12,83 @@
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBox">
-                <Setter Property="Foreground" Value="Gray" />
-                <Setter Property="Tag" Value="placeholder" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="#6E5494" />
+                <Setter Property="BorderBrush" Value="#6E5494" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Grid>
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="20" />
+                                <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
                 <Style.Triggers>
                     <Trigger Property="IsFocused" Value="True">
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="BorderBrush" Value="White" />
                         <Setter Property="Foreground" Value="Black" />
-                        <Setter Property="Tag" Value="" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="#6E5494" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="20" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#8C6FAF" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Button" x:Key="CloseButtonStyle">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="#6E5494" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="FontFamily" Value="Segoe UI" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="50" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#8C6FAF" />
                     </Trigger>
                 </Style.Triggers>
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="163*"/>
-            <ColumnDefinition Width="237*"/>
+            <ColumnDefinition Width="163*" />
+            <ColumnDefinition Width="237*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -32,17 +96,21 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBox Grid.Row="2" x:Name="FirstNameTextBox" Width="200" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,98,0,0" Grid.RowSpan="3" Text="Imię i nazwisko" PreviewTextInput="TextBox_PreviewTextInput" />
+        <TextBox Grid.Row="5" x:Name="FirstNameTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Imię" PreviewTextInput="TextBox_PreviewTextInput" Margin="30,73,0,0" />
 
-        <TextBox Grid.Row="4" x:Name="PhoneNumberTextBox" Width="200" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,146,0,0" Text="Numer telefonu" PreviewTextInput="NumberTextBox_PreviewTextInput" />
+        <TextBox Grid.Row="5" x:Name="SecondNameTextBox" Width="200" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Nazwisko" PreviewTextInput="TextBox_PreviewTextInput" Margin="30,125,0,0" />
 
-        <TextBox Grid.Row="4" x:Name="EmailTextBox" Width="200" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,192,0,0" Text="E-mail" PreviewTextInput="EmailTextBox_PreviewTextInput" />
+        <TextBox Grid.Row="4" x:Name="PhoneNumberTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Numer telefonu" PreviewTextInput="NumberTextBox_PreviewTextInput" Margin="30,229,0,0" Grid.RowSpan="2" />
 
-        <Button Content="Dodaj kontakt" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,255,137,0" Click="AddContactButton_Click" Grid.Row="4" />
+        <TextBox Grid.Row="5" x:Name="EmailTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="E-mail" PreviewTextInput="EmailTextBox_PreviewTextInput" Margin="30,174,0,0" />
 
-        <Button Content="Przeglądaj kontakty" Width="144" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,15,0,0" Click="BrowseContactsButton_Click" Grid.Column="1" />
+        <Button Content="Dodaj kontakt" Width="140" Height="41" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddContactButton_Click" Grid.Row="5" Margin="0,308,146,0" />
 
+        <Button Content="Przeglądaj kontakty" Width="153" Height="52" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BrowseContactsButton_Click" Grid.Column="1" Margin="237,39,0,0" Grid.Row="5" />
+
+        <Button Content="X" Width="27" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CloseButton_Click" Style="{StaticResource CloseButtonStyle}" Margin="0,0,10,303" Grid.Column="1" Grid.Row="5" RenderTransformOrigin="0.444,1.802" />
     </Grid>
 </Window>

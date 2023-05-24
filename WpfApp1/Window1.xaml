@@ -8,7 +8,7 @@
         Title="Window1" Height="450" Width="800">
     <Grid>
         <Button Click="MainMenu_Click" Margin="651,25,34,366">Wróć do menu głównego</Button>
-        
+        <ListBox x:Name="ContactsListBox" Width="300" Height="200" Margin="266,117,234,117" />
 
     </Grid>
 </Window>

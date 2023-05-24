@@ -55,6 +55,7 @@ namespace WpfApp1
 			string imie = FirstNameTextBox.Text;
 			string numerTelefonu = PhoneNumberTextBox.Text;
 			string adresEmail = EmailTextBox.Text;
+			string nazwisko = SecondNameTextBox.Text;
 
 			// Utwórz połączenie z bazą danych
 			string connectionString = "Server=MSI;Database=PhoneBook;Trusted_Connection=True;";
@@ -64,13 +65,35 @@ namespace WpfApp1
 				{
 					connection.Open();
 
-					// Dodaj dane do tabeli Osoby
-					string insertOsobyQuery = "INSERT INTO PhoneBook (imie, numer_telefonu, adres_email) VALUES (@Imie, @NumerTelefonu, @AdresEmail)";
-					using (SqlCommand command = new SqlCommand(insertOsobyQuery, connection))
+					// Dodaj dane do tabeli Imiona
+					string insertImionaQuery = "INSERT INTO imiona (imie) VALUES (@imie)";
+					using (SqlCommand command = new SqlCommand(insertImionaQuery, connection))
 					{
-						command.Parameters.AddWithValue("@Imie", imie);
-						command.Parameters.AddWithValue("@NumerTelefonu", numerTelefonu);
-						command.Parameters.AddWithValue("@AdresEmail", adresEmail);
+						command.Parameters.AddWithValue("@imie", imie);
+						command.ExecuteNonQuery();
+					}
+
+					// Dodaj dane do tabeli Nazwiska
+					string insertNazwiskaQuery = "INSERT INTO nazwiska (nazwisko) VALUES (@nazwisko)";
+					using (SqlCommand command = new SqlCommand(insertNazwiskaQuery, connection))
+					{
+						command.Parameters.AddWithValue("@nazwisko", nazwisko);
+						command.ExecuteNonQuery();
+					}
+
+					// Dodaj dane do tabeli Telefony
+					string insertTelefonyQuery = "INSERT INTO nrtelefonow (nrtelefonu) VALUES (@nrtelefonu)";
+					using (SqlCommand command = new SqlCommand(insertTelefonyQuery, connection))
+					{
+						command.Parameters.AddWithValue("@nrtelefonu", numerTelefonu);
+						command.ExecuteNonQuery();
+					}
+
+					// Dodaj dane do tabeli Emaile
+					string insertEmaileQuery = "INSERT INTO emaile (email) VALUES (@email)";
+					using (SqlCommand command = new SqlCommand(insertEmaileQuery, connection))
+					{
+						command.Parameters.AddWithValue("@email", adresEmail);
 						command.ExecuteNonQuery();
 					}
 
@@ -106,6 +129,10 @@ namespace WpfApp1
 			}
 		}
 
+		private void CloseButton_Click(object sender, RoutedEventArgs e)
+		{
+			Application.Current.Shutdown();
+		}
 	}
 
 	public class Contact
