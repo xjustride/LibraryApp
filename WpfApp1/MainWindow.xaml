@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\remo2\source\repos\WpfApp1\WpfApp1\Resources\background2.png" Stretch="Fill" />
+        <ImageBrush ImageSource="C:\Users\remo2\source\repos\WpfApp1\WpfApp1\Resources\backgroundmain.jpg" Stretch="Fill" />
     </Window.Background>
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBox">
                 <Setter Property="Foreground" Value="White" />
-                <Setter Property="Background" Value="#6E5494" />
+                <Setter Property="Background" Value="CornflowerBlue" />
                 <Setter Property="BorderBrush" Value="#6E5494" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="Padding" Value="5" />
@@ -99,20 +99,23 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBox Grid.Row="5" x:Name="FirstNameTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Imię" PreviewTextInput="TextBox_PreviewTextInput" Margin="30,73,0,0" />
+        <TextBox Grid.Row="5" x:Name="FirstNameTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Imię" PreviewTextInput="TextBox_PreviewTextInput" Margin="147,48,0,0" RenderTransformOrigin="-1.244,-2.39" Grid.Column="1" />
 
-        <TextBox Grid.Row="5" x:Name="SecondNameTextBox" Width="200" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Nazwisko" PreviewTextInput="TextBox_PreviewTextInput" Margin="30,125,0,0" />
+        <TextBox Grid.Row="5" x:Name="SecondNameTextBox" Width="200" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Nazwisko" PreviewTextInput="TextBox_PreviewTextInput" Margin="147,101,0,0" Grid.Column="1" />
 
-        <TextBox Grid.Row="4" x:Name="PhoneNumberTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Numer telefonu" PreviewTextInput="NumberTextBox_PreviewTextInput" Margin="30,229,0,0" Grid.RowSpan="2" />
+        <TextBox Grid.Row="4" x:Name="PhoneNumberTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Numer telefonu" PreviewTextInput="NumberTextBox_PreviewTextInput" Margin="147,301,0,0" Grid.RowSpan="2" Grid.Column="1" />
 
-        <TextBox Grid.Row="5" x:Name="EmailTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="E-mail" PreviewTextInput="EmailTextBox_PreviewTextInput" Margin="30,174,0,0" />
+        <TextBox Grid.Row="5" x:Name="EmailTextBox" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="E-mail" PreviewTextInput="EmailTextBox_PreviewTextInput" Margin="147,147,0,0" Grid.Column="1" />
+
+        <TextBox Grid.Row="5" x:Name="PESEL" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="PESEL" PreviewTextInput="PESEL_PreviewTextInput" Margin="147,247,0,0" Grid.Column="1" />
+
+        <!--<TextBox Grid.Row="5" x:Name="DataUrodzenia" Width="200" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Text="DataUrodzenia" PreviewTextInput="DataUrodzenia_PreviewTextInput" Margin="147,199,0,0" Grid.Column="1" />-->
 
 
+        <Button Content="Dodaj klienta do bazy danych" Width="205" Height="34" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddContactButton_Click" Grid.Row="5" Margin="0,371,104,0" />
 
-        <Button Content="Dodaj klienta do bazy danych" Width="214" Height="41" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddContactButton_Click" Grid.Row="5" Margin="0,318,82,0" />
+        <Button Content="Przeglądaj klientów" Width="136" Height="41" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BrowseContactsButton_Click" Margin="27,22,0,0" Grid.Row="5" />
 
-        <Button Content="Przeglądaj klientów" Width="153" Height="52" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BrowseContactsButton_Click" Grid.Column="1" Margin="237,39,0,0" Grid.Row="5" />
-
-        <Button Content="X" Width="27" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CloseButton_Click" Style="{StaticResource CloseButtonStyle}" Margin="0,0,10,303" Grid.Column="1" Grid.Row="5" RenderTransformOrigin="0.444,1.802" />
+        <Button Content="X" Width="27" Height="26" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CloseButton_Click" Style="{StaticResource CloseButtonStyle}" Margin="0,0,23,356" Grid.Column="1" Grid.Row="5" RenderTransformOrigin="0.444,1.802" />
     </Grid>
 </Window>

@@ -121,10 +121,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\background.jpg" />
+    <Resource Include="Resources\backgroundof.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\background2.png" />
+    <Resource Include="Resources\backgroundmain.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />

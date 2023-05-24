@@ -135,6 +135,11 @@ namespace WpfApp1
 			lp.Show();
 			this.Close();
 		}
+
+		private void PESEL_PreviewTextInput(object sender, TextCompositionEventArgs e)
+		{
+
+		}
 	}
 
 	public class Contact
