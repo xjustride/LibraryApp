@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibraryModelStoreContainer" CdmEntityContainer="LibraryEntities">
+    <EntitySetMapping Name="Autorzy">
+      <EntityTypeMapping TypeName="LibraryModel.Autorzy">
+        <MappingFragment StoreEntitySet="Autorzy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gatunki">
+      <EntityTypeMapping TypeName="LibraryModel.Gatunki">
+        <MappingFragment StoreEntitySet="Gatunki">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ksiazki">
+      <EntityTypeMapping TypeName="LibraryModel.Ksiazki">
+        <MappingFragment StoreEntitySet="Ksiazki">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+          <ScalarProperty Name="AutorID" ColumnName="AutorID" />
+          <ScalarProperty Name="RokWydania" ColumnName="RokWydania" />
+          <ScalarProperty Name="GatunekID" ColumnName="GatunekID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wypozyczenia">
+      <EntityTypeMapping TypeName="LibraryModel.Wypozyczenia">
+        <MappingFragment StoreEntitySet="Wypozyczenia">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KsiazkaID" ColumnName="KsiazkaID" />
+          <ScalarProperty Name="DataWypozyczenia" ColumnName="DataWypozyczenia" />
+          <ScalarProperty Name="DataZwrotu" ColumnName="DataZwrotu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

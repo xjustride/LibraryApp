@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Autorzy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ksiazki" Relationship="Self.FK__Ksiazki__AutorID__4222D4EF" FromRole="Autorzy" ToRole="Ksiazki" />
+  </EntityType>
+  <EntityType Name="Gatunki">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ksiazki" Relationship="Self.FK__Ksiazki__Gatunek__4316F928" FromRole="Gatunki" ToRole="Ksiazki" />
+  </EntityType>
+  <EntityType Name="Ksiazki">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tytul" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AutorID" Type="Int32" />
+    <Property Name="RokWydania" Type="Int32" />
+    <Property Name="GatunekID" Type="Int32" />
+    <NavigationProperty Name="Autorzy" Relationship="Self.FK__Ksiazki__AutorID__4222D4EF" FromRole="Ksiazki" ToRole="Autorzy" />
+    <NavigationProperty Name="Gatunki" Relationship="Self.FK__Ksiazki__Gatunek__4316F928" FromRole="Ksiazki" ToRole="Gatunki" />
+    <NavigationProperty Name="Wypozyczenia" Relationship="Self.FK__Wypozycze__Ksiaz__46E78A0C" FromRole="Ksiazki" ToRole="Wypozyczenia" />
+  </EntityType>
+  <EntityType Name="Wypozyczenia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KsiazkaID" Type="Int32" />
+    <Property Name="DataWypozyczenia" Type="DateTime" Precision="0" />
+    <Property Name="DataZwrotu" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Ksiazki" Relationship="Self.FK__Wypozycze__Ksiaz__46E78A0C" FromRole="Wypozyczenia" ToRole="Ksiazki" />
+  </EntityType>
+  <Association Name="FK__Ksiazki__AutorID__4222D4EF">
+    <End Role="Autorzy" Type="Self.Autorzy" Multiplicity="0..1" />
+    <End Role="Ksiazki" Type="Self.Ksiazki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Autorzy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ksiazki">
+        <PropertyRef Name="AutorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ksiazki__Gatunek__4316F928">
+    <End Role="Gatunki" Type="Self.Gatunki" Multiplicity="0..1" />
+    <End Role="Ksiazki" Type="Self.Ksiazki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gatunki">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ksiazki">
+        <PropertyRef Name="GatunekID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Wypozycze__Ksiaz__46E78A0C">
+    <End Role="Ksiazki" Type="Self.Ksiazki" Multiplicity="0..1" />
+    <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ksiazki">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Wypozyczenia">
+        <PropertyRef Name="KsiazkaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Autorzy" EntityType="Self.Autorzy" />
+    <EntitySet Name="Gatunki" EntityType="Self.Gatunki" />
+    <EntitySet Name="Ksiazki" EntityType="Self.Ksiazki" />
+    <EntitySet Name="Wypozyczenia" EntityType="Self.Wypozyczenia" />
+    <AssociationSet Name="FK__Ksiazki__AutorID__4222D4EF" Association="Self.FK__Ksiazki__AutorID__4222D4EF">
+      <End Role="Autorzy" EntitySet="Autorzy" />
+      <End Role="Ksiazki" EntitySet="Ksiazki" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ksiazki__Gatunek__4316F928" Association="Self.FK__Ksiazki__Gatunek__4316F928">
+      <End Role="Gatunki" EntitySet="Gatunki" />
+      <End Role="Ksiazki" EntitySet="Ksiazki" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Wypozycze__Ksiaz__46E78A0C" Association="Self.FK__Wypozycze__Ksiaz__46E78A0C">
+      <End Role="Ksiazki" EntitySet="Ksiazki" />
+      <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
