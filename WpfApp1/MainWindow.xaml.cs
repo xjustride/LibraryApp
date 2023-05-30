@@ -22,5 +22,30 @@ namespace WpfApp1
 			lp.Show();
 			this.Close();
 		}
+
+		private void DodajKsiazke(object sender, RoutedEventArgs e)
+		{
+			
+		}
+
+		private void Ksiazki(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void Autorzy(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void Gatunki(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void Wypozyczenia(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }

@@ -55,16 +55,16 @@
         </Grid.Background>
 
         <!-- Nagłówek -->
-        <TextBlock Text="Biblioteka Bartek" FontSize="25" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,10,0,0" Foreground="White"/>
-        <TextBlock Text="Panel Pracownika" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,62,0,0" Foreground="White" RenderTransformOrigin="1.019,0.608"/>
-        <TextBlock Text="Podaj ID" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="370,128,0,0" Foreground="White" RenderTransformOrigin="1.019,0.608"/>
+        <TextBlock Text="Biblioteka Bartek" FontFamily="/Fonts/#Ubuntu Italic" FontSize="25" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,24,0,0" Foreground="White"/>
+        <TextBlock Text="Panel Pracownika" FontFamily="/Fonts/#Ubuntu Italic" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,77,0,0" Foreground="White" RenderTransformOrigin="1.019,0.608"/>
+        <TextBlock Text="Podaj ID"  FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="370,128,0,0" Foreground="White" RenderTransformOrigin="1.019,0.608"/>
         <TextBlock Text="Podaj hasło" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="359,231,0,0" Foreground="White" RenderTransformOrigin="1.019,0.608"/>
         <!-- Pole tekstowe dla loginu -->
         <TextBox Width="200" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,153,0,0" />
         <!-- Pole tekstowe dla hasła -->
         <PasswordBox Width="200" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,256,0,0" />
         <!-- Przycisk "Zaloguj" -->
-        <Button Content="Zaloguj" Width="120" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="340,327,0,0" Background="#FFE5577A" Foreground="White" BorderBrush="#FF9B90D1" Click="Button_Click" />
+        <Button Content="Zaloguj" FontFamily="/Fonts/#Ubuntu Italic" Width="120" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="340,327,0,0" Background="#FFE5577A" Foreground="White" BorderBrush="#FF9B90D1" Click="Button_Click" />
 
     </Grid>
 
