@@ -57,7 +57,6 @@ namespace WpfApp1
 								string imie = reader.GetString(0);
 								string numerTelefonu = reader.GetString(1);
 								string adresEmail = reader.GetString(2);
-
 								string contactInfo = $"Imię: {imie}, Numer telefonu: {numerTelefonu}, Adres email: {adresEmail}";
 								contacts.Add(contactInfo);
 							}
