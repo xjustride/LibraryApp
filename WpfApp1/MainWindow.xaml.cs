@@ -6,7 +6,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-
 namespace WpfApp1
 {
 	public partial class MainWindow : Window
@@ -25,12 +24,14 @@ namespace WpfApp1
 
 		private void DodajKsiazke(object sender, RoutedEventArgs e)
 		{
-			
+
 		}
 
 		private void Ksiazki(object sender, RoutedEventArgs e)
 		{
-
+			KsiazkiWindow ks = new KsiazkiWindow();
+			ks.Show();
+			this.Close();
 		}
 
 		private void Autorzy(object sender, RoutedEventArgs e)
@@ -47,5 +48,7 @@ namespace WpfApp1
 		{
 
 		}
+
+
 	}
 }

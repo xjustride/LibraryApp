@@ -31,3 +31,6 @@ C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\EntityFramework.dll
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\EntityFramework.xml
 C:\Users\remo2\source\repos\WpfApp1\WpfApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\Ksiazki.baml
+C:\Users\remo2\source\repos\WpfApp1\WpfApp1\obj\Debug\Ksiazki.g.cs

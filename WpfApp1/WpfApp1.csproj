@@ -76,11 +76,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Autorzy.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Gatunki.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ksiazki.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="loginpage.xaml.cs">
       <DependentUpon>loginpage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ksiazki.xaml.cs">
+      <DependentUpon>Ksiazki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wypozyczenia.cs">
+      <DependentUpon>Database.tt</DependentUpon>
     </Compile>
     <Page Include="loginpage.xaml">
       <SubType>Designer</SubType>
@@ -99,6 +129,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ksiazki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,6 +163,13 @@
     <Resource Include="Fonts\Ubuntu-Medium.ttf" />
     <Resource Include="Fonts\Ubuntu-MediumItalic.ttf" />
     <Resource Include="Fonts\Ubuntu-Regular.ttf" />
+    <EntityDeploy Include="Database.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Database.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database.edmx.diagram">
+      <DependentUpon>Database.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,6 +190,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database.edmx</DependentUpon>
+      <LastGenOutput>Database.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database.edmx</DependentUpon>
+      <LastGenOutput>Database.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
